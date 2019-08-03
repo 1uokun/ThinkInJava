@@ -18,6 +18,15 @@ public class Context {
 }
 
 class Apple {
+
+    Apple eat(){
+        return this;
+    }
+
+    Apple getPeeled(){
+        return Peeler.peel(this);
+    }
+
     public void one(){
         this.two();
         two();
@@ -25,5 +34,11 @@ class Apple {
 
     public void two(){
         System.out.println("Two");
+    }
+}
+
+class Peeler{
+    static Apple peel(Apple apple){
+        return apple;
     }
 }
