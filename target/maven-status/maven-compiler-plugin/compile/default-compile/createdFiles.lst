@@ -9,6 +9,7 @@ com/interfaces/Apply.class
 com/Obj.class
 com/Chicken2.class
 com/HelloWorld.class
+com/concurrency/CacheThreadPool.class
 com/music/Note.class
 com/Chicken.class
 com/concurrency/BasicThreads.class
