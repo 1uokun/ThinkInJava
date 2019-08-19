@@ -18,6 +18,7 @@ com/interfaces/FilterAdapter.class
 com/interfaces/Upcase.class
 com/Duck2.class
 com/AnimalSound.class
+com/genericity/LinkedStack.class
 com/Peeler.class
 com/genericity/Holder3.class
 com/genericity/Automobile.class
@@ -31,6 +32,7 @@ com/Access.class
 com/Void.class
 com/Apple.class
 com/Animal.class
+com/genericity/LinkedStack$Node.class
 com/interfaces/Processor.class
 com/AccessC.class
 com/SpaceShipDelegation.class
