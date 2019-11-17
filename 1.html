@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 10进制转2进制
+     * return string
+     * **/
+    function to2(int,type){
+        if(int > type){
+            return to2(Math.floor(int/type),type) + " " + int%type
+        }else {
+            return int
+        }
+    }
+
+    console.log(to2(1105,8))
+</script>
+</body>
+</html>
