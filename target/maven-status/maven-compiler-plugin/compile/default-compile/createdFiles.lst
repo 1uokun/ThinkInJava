@@ -1,5 +1,6 @@
 com/music/Instrument.class
 com/Duck.class
+com/genericity/HasF.class
 com/concurrency/MoreBasicThreads.class
 com/Extends.class
 com/ForEach.class
@@ -9,11 +10,13 @@ com/Chicken.class
 com/concurrency/BasicThreads.class
 com/interfaces/FilterAdapter.class
 com/genericity/AutoMobile.class
+com/genericity/Manipulator2.class
 com/AnimalSound.class
 com/genericity/Holder3.class
 com/Delegation.class
 com/AccessControl.class
 com/concurrency/LiftOff.class
+com/genericity/Typeclean.class
 com/Apple.class
 com/Animal.class
 com/AccessC.class
@@ -23,6 +26,7 @@ com/React.class
 com/Context.class
 com/SpaceShipControls.class
 com/music/Music.class
+com/crypto/AesSimple.class
 com/interfaces/Apply.class
 com/Obj.class
 com/Chicken2.class
@@ -35,6 +39,7 @@ com/Duck2.class
 com/genericity/Function.class
 com/genericity/LinkedStack.class
 com/Peeler.class
+com/genericity/Manipulator.class
 com/ListCharacter.class
 com/SpaceShip.class
 com/interfaces/StringProcessor.class
@@ -45,3 +50,4 @@ com/genericity/SimplerPets.class
 com/interfaces/Processor.class
 com/genericity/Holder.class
 com/concurrency/MainThread.class
+com/genericity/Manipulator3.class

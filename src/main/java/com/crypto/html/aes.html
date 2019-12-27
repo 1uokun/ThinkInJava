@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS aes加密实现</title>
+</head>
+<body>
+<script type="text/javascript" src="./aes.js"></script>
+<script type="text/javascript" src="./pad-zeropadding.js"></script>
+<script>
+    var data = JSON.stringify({
+        pk:"pk",
+        name:"base_user_name",
+        role:"角色",
+        time:"2019-12-27"
+    });
+    var key = CryptoJS.enc.Latin1.parse('1024ABCDDCBA1024');
+    var iv = CryptoJS.enc.Latin1.parse('ABCD10244201ABCD');
+
+    //加密
+    var encrypted = CryptoJS.AES.encrypt(data, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.ZeroPadding
+    });
+    console.log("加密结果：",encrypted.toString())
+    //解密
+    var decrypted = CryptoJS.AES.decrypt(encrypted, key, {iv: iv, padding: CryptoJS.pad.ZeroPadding});
+    console.log("解密结果：",decrypted.toString(CryptoJS.enc.Utf8));
+
+</script>
+</body>
+</html>
