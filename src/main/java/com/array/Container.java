@@ -2,7 +2,9 @@ package com.array;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 数组与容器
@@ -54,6 +56,7 @@ public class Container {
         int[][] ii = new int[3][2];
         System.out.println("多维数组："+Arrays.deepToString(ii));
 
+        Parameter.main();
     }
 }
 
@@ -71,5 +74,61 @@ class GsonDemo {
         System.out.println(gson.fromJson(str,Collection.class).str);
         System.out.println(gson.fromJson(str,Collection.class).anInt);
         System.out.println(gson.fromJson(str,Collection.class).points[0][0]);
+    }
+}
+
+/**
+ * 数组与泛型
+ *
+ * - 不能实力话具有参数化类型的数组
+ * `Peel<Banana>[] peels = new Peel<Banana>[10]; // Illegal`
+ *
+ * - 如果你知道将来不会向上转型，并且需求也相对比较简单，那么你仍旧可以创建泛型数组，
+ * 它可以提供基本的编译期类型检查。但事实上，【泛型容器】总是比【泛型数据】更好的选择。
+ * **/
+class Parameter {
+    public static void main() {
+        String[] s = new String[10];
+        String[] classParameter;
+
+        // ClassParameter<String>[] classParameters = new ClassParameter<String>[10]; //Illegal
+
+        classParameter = new ClassParameter<String>().f(s);
+        // or
+        classParameter = MethodParameter.f(s);
+        System.out.println(Arrays.deepToString(classParameter));
+
+        //泛型容器
+        List<String>[] ls;
+    }
+}
+
+class ClassParameter<T> {
+    T[] f(T[] arg) { return arg; }
+}
+
+class MethodParameter {
+    static <T> T[] f(T[] arg) { return arg; }
+}
+
+
+class Ex9<T> {
+
+    static class Peel<T>{
+        public Peel(T t){
+            //...
+        }
+    }
+
+    static class Banana {
+
+    }
+
+    public static void main(String[] args) {
+        // Peel<Banana> peel = new Peel<Banana>[10]; //Illegal
+        List<Peel<Banana>> peels = new ArrayList<Peel<Banana>>();
+
+        Peel<Banana> peel = new Peel<Banana>(new Banana());
+        peels.add(peel);
     }
 }
