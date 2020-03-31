@@ -1,5 +1,15 @@
 package com.concurrency;
 
+/**
+ * Runnable
+ *
+ * - 使用方式：
+ *  LiftOff launch = new LiftOff();
+ *  launch.run();
+ *
+ * - run为抽象方法
+ *  静态方法 `Thread.yield();` 线程调度器
+ * **/
 public class LiftOff implements Runnable{
     protected int countDown = 10;
     //任务id

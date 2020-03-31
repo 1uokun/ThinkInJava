@@ -14,5 +14,49 @@ public class BasicThreads {
         Thread t = new Thread(new LiftOff());
         t.start();
         System.out.println("Waiting for LiftOff"); //先执行这一行
+
+        //简写
+        //android > Activity 内有一个方法runOnUiThread
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Running after LiftOff");
+            }
+        }).start();
+
+        Thread ta = new Thread(new Ex1A());
+        Thread tb = new Thread(new Ex1B());
+        ta.start();
+        tb.start();
+    }
+}
+
+class Ex1A implements Runnable{
+
+    @Override
+    public void run() {
+        int i = 0;
+        while(i<3){
+            i++;
+            System.out.println("Ex1A print");//执行顺序随机的
+            Thread.yield();
+        }
+        System.out.println("Ex1A break-out loop");
+        return;
+    }
+}
+
+class Ex1B implements Runnable{
+
+    @Override
+    public void run() {
+        int i = 0;
+        while(i<3){
+            i++;
+            System.out.println("Ex1B print");
+            Thread.yield();
+        }
+        System.out.println("Ex1B break-out loop");
+        return;
     }
 }
