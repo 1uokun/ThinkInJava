@@ -21,9 +21,10 @@ public class UsingStringBuilder {
     public static void main(String[] args) {
         String s = "";
         s = "A"+"B"+"C"+"D";
-        System.out.println(s);
+//        System.out.println(s);
 
-        System.out.println(new UsingStringBuilder());
+//        System.out.println(new UsingStringBuilder());
+        new Print1ToMaxOfDigits(10);
     }
 
     //案例：打印出列表arr
@@ -37,5 +38,34 @@ public class UsingStringBuilder {
         stringBuilder.delete(stringBuilder.length()-2,stringBuilder.length());
         stringBuilder.append("]");
         return stringBuilder.toString();
+    }
+}
+
+class Print1ToMaxOfDigits {
+    public Print1ToMaxOfDigits(int n){
+        Print1ToMaxOfNDigits(n);
+    }
+
+    void Print1ToMaxOfNDigits(int n){
+        if(n>=0){
+            char[] number = new char[n+1];
+            for(int i=0;i<10;++i){
+                number[0] = (char) (i+'0');
+                Print1ToMaxOfNDigitsRecursively(number, n, 0);
+            }
+        }
+    }
+
+    void Print1ToMaxOfNDigitsRecursively(char[] number, int length, int index){
+        if(index == length -1 ){
+            //PrintNumber
+            System.out.println(number);
+        }else {
+            for(int i=0;i<10;++i){
+                number[index+1] = (char) (i + '0');
+                Print1ToMaxOfNDigitsRecursively(number, length, index+1);
+            }
+        }
+
     }
 }
